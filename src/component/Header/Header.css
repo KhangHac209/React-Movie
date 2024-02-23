@@ -1,13 +1,13 @@
-.header{
+.header {
     background-color: black;
 }
-.choice{
+.choice {
     margin-left: 300px;
 }
 .search {
     position: relative;
 }
-.search input{
+.search input {
     padding: 5px 25px;
     width: 100%;
     background-color: black;
@@ -15,18 +15,22 @@
     border-radius: 50px;
     outline: none;
 }
-.search input::placeholder{
+.search input::placeholder {
     color: white;
 }
-.search .fa-magnifying-glass{
+.search .fa-magnifying-glass {
     position: absolute;
     top: 10px;
     right: 15px;
     color: var(--primary-color);
 }
-.navbar-nav a{
+.navbar-nav a {
     color: white;
 }
-.navbar-nav a.active{
+.navbar-nav a.active {
     color: var(--primary-color) !important;
+}
+.navbar-toggler-icon {
+    background-color: rgb(208, 202, 202) !important;
+    border-radius: 5px;
 }
