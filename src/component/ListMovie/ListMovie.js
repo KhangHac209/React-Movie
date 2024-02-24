@@ -29,7 +29,7 @@ const ListMovie = () => {
                 <Row>
                     {newMovie &&
                         newMovie.map((item) => (
-                            <Col lg={3}>
+                            <Col lg={3} md={6}>
                                 <CardMovie key={item.id} id={item.id} poster_path={item.poster_path} title={item.title} release_date={item.release_date} vote_average={item.vote_average}></CardMovie>
                             </Col>
                         ))}

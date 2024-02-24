@@ -9,7 +9,36 @@ import useFetch from "../../useFetch";
 
 const ListMovie = (props) => {
     const listMovie = useFetch(props.apiLink);
-    const settings = {
+
+    useEffect(() => {
+        const handleResize = () => {
+            // Cập nhật số lượng slidesToShow và slidesToScroll dựa trên kích thước màn hình
+            let slidesToShow = 6;
+            let slidesToScroll = 3;
+            if (window.innerWidth <= 768) {
+                slidesToShow = 3;
+                slidesToScroll = 2;
+            }
+            if (window.innerWidth <= 576) {
+                slidesToShow = 2;
+                slidesToScroll = 1;
+            }
+            setSettings({
+                ...settings,
+                slidesToShow,
+                slidesToScroll,
+            });
+        };
+
+        window.addEventListener("resize", handleResize);
+        handleResize(); // Gọi hàm một lần để cài đặt ban đầu
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []); // Empty dependency array ensures that effect runs only once on mount
+
+    const [settings, setSettings] = useState({
         infinite: true,
         speed: 500,
         slidesToShow: 6,
@@ -17,7 +46,8 @@ const ListMovie = (props) => {
         autoplay: true,
         autoplaySpeed: 2000,
         cssEase: "linear",
-    };
+    });
+
     return (
         <div className="list-movie">
             <Container className="my-3">
