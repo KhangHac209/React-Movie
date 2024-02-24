@@ -36,7 +36,7 @@ const ListMovie = () => {
                 </Row>
                 <div className="showMovie">
                     <Button className="showMore" onClick={handleShowMore}>
-                        <i class="fa-solid fa-play"></i>Show More
+                        <i className="fa-solid fa-play"></i>Show More
                     </Button>
                 </div>
             </Container>
